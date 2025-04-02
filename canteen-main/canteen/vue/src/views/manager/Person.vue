@@ -26,6 +26,9 @@
         <el-form-item label="余额" v-if="data.user.role === 'USER'">
           <el-input readonly v-model="data.user.account" autocomplete="off" />
         </el-form-item>
+        <el-form-item label="密码" v-if="data.user.role === 'USER'">
+         <el-input v-model="data.user.password" autocomplete="off" />
+        </el-form-item>
         <el-form-item>
           <el-button type="success" @click="handleCharge">充值</el-button>
           <el-button type="primary" @click="save">保存</el-button>
