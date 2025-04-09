@@ -17,7 +17,7 @@ public class OrdersController {
     OrdersService ordersService;
 
     /**
-     * 新增
+     * 创建新订单
      */
     @PostMapping("/add")
     public Result add(@RequestBody Orders orders) {
@@ -26,7 +26,7 @@ public class OrdersController {
     }
 
     /**
-     * 删除
+     * 删除指定ID的订单
      */
     @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable Integer id) {
@@ -35,7 +35,7 @@ public class OrdersController {
     }
 
     /**
-     * 批量删除
+     * 批量删除订单
      */
     @DeleteMapping("/delete/batch")
     public Result delete(@RequestBody List<Integer> ids) {
@@ -44,7 +44,7 @@ public class OrdersController {
     }
 
     /**
-     * 更新
+     * 更新订单信息
      */
     @PutMapping("/update")
     public Result update(@RequestBody Orders orders) {
@@ -53,7 +53,7 @@ public class OrdersController {
     }
 
     /**
-     * 查询单个
+     * 根据ID查询单个订单
      */
     @GetMapping("/selectById/{id}")
     public Result selectById(@PathVariable Integer id) {
@@ -62,7 +62,7 @@ public class OrdersController {
     }
 
     /**
-     * 查询所有
+     * 查询所有订单（支持用户名称和ID过滤）
      */
     @GetMapping("/selectAll")
     public Result selectAll(String userName, Integer userId) {
@@ -71,7 +71,7 @@ public class OrdersController {
     }
 
     /**
-     * 查询所有
+     * 分页查询订单（支持用户名称和ID过滤）
      */
     @GetMapping("/selectPage")
     public Result selectPage(

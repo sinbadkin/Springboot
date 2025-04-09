@@ -4,7 +4,9 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import com.example.entity.Orders;
 import com.example.entity.User;
+import com.example.exception.ArgumentException;//待定
 import com.example.exception.CustomException;
+import com.example.exception.StateException;//待定
 import com.example.mapper.OrdersMapper;
 import com.example.mapper.UserMapper;
 import com.github.pagehelper.PageHelper;
@@ -53,6 +55,14 @@ public class OrdersService {
             if (account.doubleValue() < 0) {
                 throw new CustomException("账户余额不足");
             }
+            //从这开始
+//            if (orders.getOrderNo() == null) {
+//                throw new ArgumentException("订单不存在");
+//            }
+//            if (!orders.getStatus().equals("待结算")) {
+//                throw new StateException("订单状态不是待结算状态");
+//            }
+            //从这结束
             user.setAccount(account);
             userMapper.updateById(user);
         }

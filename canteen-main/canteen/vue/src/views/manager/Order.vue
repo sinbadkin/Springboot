@@ -137,7 +137,7 @@ const save = () => {
   data.orderList.forEach(item => {
     content += item.name + 'x' + item.num + '，'
   })
-  content = content.substring(0 , content.length - 1)  //  理论上来说 最后会多出一个逗号，所以我们去掉最后一个逗号即可 菜单的内容： 腊肠炒芹菜x1, 糖醋排骨x2
+  content = content.substring(0 , content.length - 1)  //  理论上来说 最后会多出一个逗号，所以我们去掉最后一个逗号即可
   let orderData = {  content:  content, total: data.orderTotal, userId: data.user.id, status: '待出餐'}
   request.post('/orders/add', orderData).then(res => {
     if (res.code === '200') {  // 下单成功
